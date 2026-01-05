@@ -76,8 +76,7 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Mavis-Liang/bifaToolkits" class="external-link">bifaToolkits</a></span><span class="op">)</span></span></code></pre></div>
 <p>Check what you can run on your machine:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Mavis-Liang/bifaToolkits" class="external-link">bifaToolkits</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/available_backends.html">available_backends</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/available_backends.html">available_backends</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>If you need an optional backend (and it is unavailable above),
 install it via:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -100,8 +99,9 @@ should be done, for example, terra. These might be difficult.</p>
 <blockquote>
 <p><strong>Note on BMSFA</strong> install_backend(“bmsfa”) installs the
 MSFA package from Mavis’s GitHub, which allows user-input scaling and
-centering options. The original MSFA package on CRAN does not have these
-options.</p>
+centering options. The DeVito MSFA package does not have these options
+and does internal standardizations. If your backend is DeVito’s MSFA, do
+not specify scaling/centering.</p>
 </blockquote>
 <blockquote>
 <p><strong>Note on script backends (PFA / Tetris).</strong><br>
@@ -176,7 +176,7 @@ refit” workflow.</p>
 <span>  j_s <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">2</span>, <span class="va">S</span><span class="op">)</span>,</span>
 <span>  centering <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  scaling <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  control <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>nrun <span class="op">=</span> <span class="fl">1000</span>, burn <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span>
+<span>  control <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>nrun <span class="op">=</span> <span class="fl">2000</span>, burn <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">

@@ -14,7 +14,6 @@ library(bifaToolkits)
 Check what you can run on your machine:
 
 ``` r
-library(bifaToolkits)
 available_backends()
 ```
 
@@ -40,8 +39,9 @@ and no need t `library` it after installing.
 
 > **Note on BMSFA** install_backend(“bmsfa”) installs the MSFA package
 > from Mavis’s GitHub, which allows user-input scaling and centering
-> options. The original MSFA package on CRAN does not have these
-> options.
+> options. The DeVito MSFA package does not have these options and does
+> internal standardizations. If your backend is DeVito’s MSFA, do not
+> specify scaling/centering.
 
 > **Note on script backends (PFA / Tetris).**  
 > In this package, PFA and Tetris are bundled under `inst/extdata/pfa/`
@@ -112,7 +112,7 @@ fit0 <- fit_bmsfa(
   j_s = rep(2, S),
   centering = TRUE,
   scaling = FALSE,
-  control = list(nrun = 1000, burn = 200)
+  control = list(nrun = 2000, burn = 1000)
 )
 ```
 
